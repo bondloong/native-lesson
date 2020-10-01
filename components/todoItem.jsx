@@ -1,9 +1,9 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 
-const todoItem = ({item, pressHendler}) => {
+const todoItem = ({item, hendlerDelete}) => {
     return (
-        <TouchableOpacity style={styles.item} onPress={() => pressHendler(item.key)}>
+        <TouchableOpacity style={styles.item} onPress={() => hendlerDelete(item.key)}>
             <Text>{item.text}</Text>
         </TouchableOpacity>
     )
