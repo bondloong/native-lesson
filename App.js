@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View, FlatList, Alert } from 'react-native';
 import Header from './components/header';
 import TodoItem from './components/todoItem'
 import AddTodo from './components/addTodo';
@@ -23,8 +23,11 @@ export default function App() {
           ...prevTodos
         ]
       })
+    }else {
+      Alert.alert('OOPS!', 'Todo must be over 3 chars long', [
+        {text: 'Understood', onPress: () => console.log('alert closed')}
+      ])
     }
-    return
   }
   return (
     <View style={styles.container}>
@@ -49,12 +52,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   content: {
     paddingTop: '10%',
+    margin: '10%'
   },
   list: {
+    width: '100%'
   }
 });
