@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, FlatList, Alert, TouchableWithoutFeedback, Keyboard } from 'react-native';
+
 import Header from './components/header';
 import TodoItem from './components/todoItem'
 import AddTodo from './components/addTodo';
-import Sandbox from './components/sandbox';
 
 export default function App() {
   const [todos, setTodos] = useState([
@@ -58,7 +58,8 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    padding: 30,
+    paddingHorizontal: 30,
+    paddingTop:30,
   },
   list: {
     flex: 1,
